@@ -53,6 +53,7 @@ export default class Responder {
 
     let shortcut = findShortcut(this.shortcuts, event);
     if (shortcut) {
+      event.preventDefault(); // TODO: Make this overridable
       this.target.send(shortcut.action, event);
       return true;
     } else {
